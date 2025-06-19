@@ -7,9 +7,9 @@ export default function UserCard({name,email,url}){
         <>
         <div id="one">
             <div id="two">
+                <img src={url} width={250} height={150}/>
                 <p>name:{name}</p>
                 <p>email:{email}</p>
-                <img src={url} width={250} height={100}/>
             </div>
         </div>
         </>
