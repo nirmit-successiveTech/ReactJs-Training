@@ -148,231 +148,45 @@ button{
   flex-wrap: nowrap;
 }
 
+.parent-button{
+  background-color: #E65182;
+  padding: 30px;
+  color:white;
+}
+
+.layout-button{
+   display: flex;
+  justify-content: space-around;
+}
+
 .parent-button button{
-  background-color:  #dd7973;
+  margin-top: 18px;
+  background-color: rgb(49, 137, 221);;
   font-size: 20px;
   border-radius: 10px;
   border: none;
-  color: rgb(24, 23, 23);
+  color: white
 }
-
-.list-element{
-  width: 200px;
-  margin: auto;
-
-}
-
-.list-values{
+.heading-wrapper{
   display: flex;
-}
-
-
-.img-wrapper{
-  padding: 30px;  
-  background-color: beige;
-  display: flex;
-  justify-content:space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.img-wrapper button{
-  background-color: black;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.price-section{
-  padding-top: 25px;
-  margin: auto;
-  width: 50%;
-  text-align: center;
-  font-size: 40px;
-}
-
-.parent-form{
-  width: 50%;
-  margin: auto;
-  padding-top: 20px;
-  text-align: center;
-}
-
-.form-wrapper form{
-  display: flex;
-  gap: 12px;
-  padding: 5px;
-  margin: 8px;
-}
-
-.form-wrapper input{
-  padding: 5px;
-  border-radius: 8px;
-}
-
-.form-child{
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.listvalues{
-  padding-top: 25px;
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
-  font-size: 25px;
-}
-
-.list-element button{
   align-items: center;
-  background-color: red;
+  justify-content: space-between;
+}
+
+.home-wrapper{
+  margin: auto;
+  background-color: rgb(49, 137, 221);
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-wrapper button{
+  background-color: #E65182;
+  padding-left: 15px;
+  padding-right: 15px;
   color: white;
-  padding: 8px;
-  border-radius: 6px;
+  font-size:20px;
   border: none;
-  width: 80px;
-}
-
-.input-values{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: center;
-  margin: auto;
-  padding-top: 55px;
-}
-
-.input-values input{
-  padding: 5px;
   border-radius: 8px;
-  border: solid 2px black;
-}
-
-.input-values button{
-  background-color: green;
-  color: white;
-  width: 75px;
-  border-radius: 8px;
-  border: none;
-}
-
-.number-wrapper{
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: auto;
-  width: 50%;
-  text-align: center;
-}
-
-.number-wrapper button{
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.cnt-wrapper{
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  width: 50%;
-  margin: auto;
-  text-align: center ;
-  padding-top: 30px;
-}
-
-.cnt-wrapper input{
-  padding: 5px;
-  border-radius: 8px;
-  border: solid 2px black;
-}
-
-.cnt-wrapper button{
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 7px;
-  border-radius: 5px;
-  
-}
-
-.cnt-button{
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  margin: auto;
-}
-
-.clock{
-  width: 50%;
-  padding-top: 20px;
-  margin: auto;
-  text-align: center;
-  font-size: 50px;
-}
-
-.notification-wrapper{
-  margin: auto;
-  width: 50%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.notification-wrapper button{
-  background-color: green;
-  color: white;
-  border: none;
-  width: 60px;
-  border-radius: 8px;
-}
-
-.notification-wrapper input{
-  padding: 5px;
-  border-radius: 8px;
-  border: solid 2px black;
-}
-
-.parent-wrapper{
-  width: 50%;
-  margin: auto;
-  text-align: center;
-}
-
-.box-wrapper{
-  border: solid 2px black;
-  border-radius: 5px;
-}
-
-.parent-wrapper button{
-  background-color: black;
-  color: white;
-  font-weight:900;
-}
-
-.parent{
-  width: 100%;
-  height: 100vh;
-}
-.mybtn{
-  width: 50%;
-  margin: auto;
-  text-align: center;
-}
-.parent button{
-  margin: auto;
-  background-color:goldenrod;
-  color: white;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
 }
