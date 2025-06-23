@@ -15,7 +15,7 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className="clock">
+    <div className="clock" style={{margin:'auto',width:'50%',textAlign:'center',paddingTop:'20px',fontSize:'30px'}}>
       <p>{time}</p>
     </div>
   );

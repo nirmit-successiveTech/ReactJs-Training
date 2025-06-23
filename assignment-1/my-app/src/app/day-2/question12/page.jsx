@@ -23,16 +23,16 @@ export default function Question12() {
   const [state, dispatch] = useReducer(reducer, initialstate);
 
   return (
-    <div>
-      <div>
+    <div style={{width:'50%',margin:'auto',textAlign:'center',fontSize:'30px'}}>
+      <div >
         <p>{state.partyA}</p>
         <p>{state.partyB}</p>
         <p>{state.partyC}</p>
       </div>
-      <div>
-        <button onClick={() => dispatch({ type: "Vote-A" })}>Vote A</button>
-        <button onClick={() => dispatch({ type: "Vote-B" })}>Vote B</button>
-        <button onClick={() => dispatch({ type: "Vote-C" })}>Vote C</button>
+      <div style={{display:'flex',flexDirection:'row',margin:'auto',width:'50%',justifyContent:'space-between'}}>
+        <button  style={{backgroundColor:'red',color:'white',border:'none',borderRadius:'10px'}}   onClick={() => dispatch({ type: "Vote-A" })}>Vote A</button>
+        <button  style={{backgroundColor:'yellow',color:'white',border:'none',borderRadius:'10px'}} onClick={() => dispatch({ type: "Vote-B" })}>Vote B</button>
+        <button  style={{backgroundColor:'green',color:'white',border:'none',borderRadius:'10px'}} onClick={() => dispatch({ type: "Vote-C" })}>Vote C</button>
       </div>
     </div>
   );

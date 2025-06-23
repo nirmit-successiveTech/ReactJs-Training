@@ -1,11 +1,13 @@
 import Link from "next/link";
 import CartProvider from "./context/ShoppingContext";
 import ThemeProvider from "./context/ThemeContext";
+import Language from "./context/LanguageContext";
 
 export default function Layout2({ children }) {
   return (
     <ThemeProvider>
       <CartProvider>
+        <Language>
         <div className="parent-button">
           <div className="heading-wrapper">
             <div>
@@ -78,6 +80,7 @@ export default function Layout2({ children }) {
           </div>
         </div>
         {children}
+        </Language>
       </CartProvider>
     </ThemeProvider>
   );

@@ -10,8 +10,8 @@ export default function Question9(){
     }
 
     return(
-        <div style={style[theme]} className="parent">
-            <div className="mybtn">
+        <div style={style[theme]} className="parent" >
+            <div className="mybtn" style={{margin:'auto',width:'50%',textAlign:'center',paddingTop:'20px'}}>
                 <button onClick={toggleTheme}>toggle</button>
             </div>
         </div>

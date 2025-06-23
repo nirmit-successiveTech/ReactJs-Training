@@ -16,15 +16,17 @@ export default function StudentList(){
     },[name])
 
     return(
-        <div>
+        <div style={{width:'50%',margin:'auto',textAlign:'center',display:'flex',flexDirection:'column',gap:'20px',paddingTop:'20px',fontSize:'29px'}}>
             {students.map((item,index)=>(
                 <div key={index}>
                     {item}
                 </div>
             ))}
             <div>
-                <div><input type="text" placeholder="Enter the Name" value={newname} onChange={(e)=>setnewname(e.target.value)} /></div>
-                <div><button onClick={AddName}>Add</button></div>
+                <div><input type="text" placeholder="Enter the Name" value={newname} onChange={(e)=>setnewname(e.target.value)} style={{padding:'10px'}}/></div>
+                <div style={{paddingTop:'15px'}}>
+                    <button onClick={AddName} style={{backgroundColor:'green',color:'white',border:'none',width:'100px',borderRadius:'10px'}} >Add</button>
+                </div>
             </div>
         </div>
     )

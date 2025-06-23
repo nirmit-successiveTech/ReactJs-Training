@@ -14,10 +14,10 @@ export default function RandomNumberGenerator(){
     }
 
     return(
-        <div className="number-wrapper">
+        <div className="number-wrapper" style={{width:"50%",margin:'auto',textAlign:'center',paddingTop:"20px"}}>
             <h2>{`The Random number generator is :${randomnumber}`}</h2>
             <div>
-                <button onClick={Randomise}>Generate</button>
+                <button onClick={Randomise} style={{padding:'15px',backgroundColor:'green',color:'white',border:'none',width:'100px',borderRadius:'10px'}}>Generate</button>
             </div>
             
         </div>

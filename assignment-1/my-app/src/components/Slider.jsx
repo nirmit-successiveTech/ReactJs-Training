@@ -35,12 +35,12 @@ export default function Slider() {
  
 
   return (
-    <div className="parent-wrapper">
+    <div className="parent-wrapper" style={{margin:'auto',width:'50%',textAlign:'center',border:'solid 2px black'}}>
       <div className="box-wrapper">
         <img src={myimages[cnt]} width={300} height={300} alt="" />
       </div>
       <div>
-        <button onClick={HandleClick}>Pause</button>
+        <button onClick={HandleClick} style={{padding:'15px',backgroundColor:'red',color:'white',border:'none',width:'100px',borderRadius:'10px'}} >Pause</button>
       </div>
     </div>
   );

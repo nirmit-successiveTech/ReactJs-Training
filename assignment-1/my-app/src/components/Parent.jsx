@@ -14,7 +14,7 @@ export default function Parent(){
     },[])
 
     return(
-        <div>
+        <div style={{width:'50%',margin:'auto',textAlign:'center'}}>
             <Child name={'Click Me'} handleClick={handleClick} count={cnt} resetValue={resetvalue}/> 
         </div>
     )

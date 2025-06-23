@@ -6,7 +6,7 @@ export default function PersonForm(){
     const [lastname,setlastname]=useState('')
     const [age,setage]=useState('')
     return(
-        <div className="parent-form">
+        <div className="parent-form" style={{width:"50%",margin:"auto",paddingTop:'20px'}}>
         <div className="form-wrapper">
             <form action="">
             <input type="text" placeholder="Enter Your Firstname" onChange={(e)=>setfirstname(e.target.value)}/>
@@ -16,7 +16,7 @@ export default function PersonForm(){
         </div>
 
 
-        <div className="form-child">
+        <div className="form-child" style={{margin:"auto",width:"50%",paddingTop:'20px',textAlign:"center"}}>
             <div>{firstname}</div>
             <div>{lastname}</div>
             <div>{age}</div>
