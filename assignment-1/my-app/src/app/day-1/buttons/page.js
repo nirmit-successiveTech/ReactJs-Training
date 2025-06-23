@@ -1,4 +1,6 @@
-import Styler from "@/components/buttonstyle";
+// import Styler from "@/components/buttonstyle";
+
+import Styler from "@/components/ButtonDesign";
 
 
 export default function ShowButton(){
