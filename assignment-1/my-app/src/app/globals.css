@@ -150,10 +150,45 @@ button{
   flex-wrap: nowrap;
 }
 
+.parent-button{
+  background-color: #E65182;
+  padding: 30px;
+  color:white;
+}
+
+.layout-button{
+   display: flex;
+  justify-content: space-around;
+}
+
 .parent-button button{
-  background-color:  #dd7973;
+  margin-top: 18px;
+  background-color: rgb(49, 137, 221);;
   font-size: 20px;
   border-radius: 10px;
   border: none;
-  color: rgb(24, 23, 23);
+  color: white
+}
+.heading-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-wrapper{
+  margin: auto;
+  background-color: rgb(49, 137, 221);
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-wrapper button{
+  background-color: #E65182;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  font-size:20px;
+  border: none;
+  border-radius: 8px;
 }
