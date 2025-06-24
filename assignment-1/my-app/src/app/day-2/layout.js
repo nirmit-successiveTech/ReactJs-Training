@@ -1,9 +1,61 @@
+"use client"
 import Link from "next/link";
 import CartProvider from "./context/ShoppingContext";
 import ThemeProvider from "./context/ThemeContext";
 import Language from "./context/LanguageContext";
+import { useState } from "react";
 
 export default function Layout2({ children }) {
+
+  const [flag,setflag]=useState(false)
+
+  const buttonvalues=[
+    {
+      val:'/day-2/question1'
+    },
+        {
+      val:'/day-2/question2'
+    },    {
+      val:'/day-2/question3'
+    },    {
+      val:'/day-2/question4'
+    },    {
+      val:'/day-2/question5'
+    },    {
+      val:'/day-2/question6'
+    },    {
+      val:'/day-2/question7'
+    },    {
+      val:'/day-2/question8'
+    },    {
+      val:'/day-2/question9'
+    },    {
+      val:'/day-2/question10'
+    },    {
+      val:'/day-2/question11'
+    },    {
+      val:'/day-2/question12'
+    },    {
+      val:'/day-2/question13'
+    },    {
+      val:'/day-2/question14'
+    },    {
+      val:'/day-2/question15'
+    },    {
+      val:'/day-2/question16'
+    },    {
+      val:'/day-2/question17'
+    },    {
+      val:'/day-2/question18'
+    },    {
+      val:'/day-2/question19'
+    },   
+  ]
+
+  function HandleClick(){
+    setflag((prev)=>prev==true?false:true)
+  }
+
   return (
     <ThemeProvider>
       <CartProvider>
@@ -11,7 +63,7 @@ export default function Layout2({ children }) {
         <div className="parent-button">
           <div className="heading-wrapper">
             <div>
-              <h2>Please Select the Questions</h2>
+              <button onClick={HandleClick}>See Question</button>
             </div>
             <div>
               <Link href={'/'}>
@@ -19,64 +71,14 @@ export default function Layout2({ children }) {
               </Link>
             </div>
           </div>
-          <div className="layout-button">
-            <Link href="/day-2/question1">
-              <button>Question-1</button>
-            </Link>
-            <Link href="/day-2/question2">
-              <button>Question-2</button>
-            </Link>
-            <Link href="/day-2/question3">
-              <button>Question-3</button>
-            </Link>
-            <Link href="/day-2/question4">
-              <button>Question-4</button>
-            </Link>
-            <Link href="/day-2/question5">
-              <button>Question-5</button>
-            </Link>
-            <Link href="/day-2/question6">
-              <button>Question-6</button>
-            </Link>
-            <Link href="/day-2/question7">
-              <button>Question-7</button>
-            </Link>
-            <Link href="/day-2/question8">
-              <button>Question-8</button>
-            </Link>
-            <Link href="/day-2/question9">
-              <button>Question-9</button>
-            </Link>
-            <Link href="/day-2/question10">
-              <button>Question-10</button>
-            </Link>
-            <Link href="/day-2/question11">
-              <button>Question-11</button>
-            </Link>
-            <Link href="/day-2/question12">
-              <button>Question-12</button>
-            </Link>
-            <Link href="/day-2/question13">
-              <button>Question-13</button>
-            </Link>
-            <Link href="/day-2/question14">
-              <button>Question-14</button>
-            </Link>
-            <Link href="/day-2/question15">
-              <button>Question-15</button>
-            </Link>
-            <Link href="/day-2/question16">
-              <button>Question-16</button>
-            </Link>
-            <Link href="/day-2/question17">
-              <button>Question-17</button>
-            </Link>
-            <Link href="/day-2/question18">
-              <button>Question-18</button>
-            </Link>
-            <Link href="/day-2/question19">
-              <button>Question-19</button>
-            </Link>
+          <div className={flag?"sidebar-menu":"hide-menu"} >
+            {buttonvalues.map((item,index)=>(
+              <div key={index} className="sidebar-child">
+                <Link href={item.val}>
+                <button className="sidebar-button">{index+1}</button>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
         {children}

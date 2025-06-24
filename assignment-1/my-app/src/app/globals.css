@@ -150,7 +150,6 @@ button{
 
 .parent-button{
   background-color: #E65182;
-  padding: 30px;
   color:white;
 }
 
@@ -171,6 +170,7 @@ button{
 .heading-wrapper{
   display: flex;
   align-items: center;
+  padding: 30px;
   justify-content: space-between;
 }
 
@@ -203,4 +203,24 @@ button{
 .form-wrapper input{
   padding: 10px;
   border-radius: 10px;
+}
+
+.sidebar-menu{
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: scroll;
+  position: absolute;
+  border: solid 5px #E65182;
+}
+
+.sidebar-button{
+  width: 50%;
+}
+
+.hide-menu{
+  display: none;
 }

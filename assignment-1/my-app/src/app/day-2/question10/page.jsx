@@ -7,6 +7,7 @@ export default function Question10(){
     const [cnt,setcnt]= useState(0);
     function HandleClick(){
         setcnt((prev)=>prev===0?1:0)
+        
     }
 
     return(

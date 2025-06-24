@@ -1,4 +1,6 @@
-import Tasklist from "@/components/tasklist";
+// import Tasklist from "@/components/tasklist";
+
+import Tasklist from "@/components/TaskList";
 
 
 export default function MyTask(){
