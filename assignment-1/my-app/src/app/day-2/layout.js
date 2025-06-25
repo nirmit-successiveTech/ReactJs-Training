@@ -75,7 +75,7 @@ export default function Layout2({ children }) {
             {buttonvalues.map((item,index)=>(
               <div key={index} className="sidebar-child">
                 <Link href={item.val}>
-                <button className="sidebar-button">{index+1}</button>
+                <button className="sidebar-button" onClick={HandleClick}>{index+1}</button>
                 </Link>
               </div>
             ))}

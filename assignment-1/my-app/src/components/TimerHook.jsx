@@ -1,42 +1,76 @@
-"use client"
-import { useEffect, useState } from "react"
+"use client";
+import useCountdown from "@/app/day-2/hook/useTimer";
+import { useState } from "react";
 
-export default function TimerHook(){
-    const [useTimer,setuseTime]=useState('')
-    const [count,setcount]=useState('')
-    const [flag,setflag]=useState(false)
 
-    function HandleClick(){
-        setuseTime(count);
-        setflag((prev)=> prev===false?true:true)
-    }
+export default function TimerHook() {
+  const [inputVal, setInputVal] = useState("");
+  const { count, isActive, start, pause, reset } = useCountdown();
 
-    function PauseTimer(){
-        setflag((prev)=>prev===true?false:false)
-    }
+  const handleStart = () => {
+    const duration = parseInt(inputVal);
+      start(duration);
+  };
 
-    useEffect(()=>{
-        let id;
+  return (
+    <div style={{ textAlign: "center", padding: "2rem" }}>
+      <h2>Countdown Timer</h2>
 
-        if(flag){
-            id=setInterval(() => {
-                console.log('counting');
-            setcount((count)=>count-1);
-            }, 1000);
-        }
+      <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+        {count > 0 ? count : "Time's up!"}
+      </div>
 
-        return ()=>clearInterval(id)
+      <input
+        type="number"
+        placeholder="Enter countdown seconds"
+        value={inputVal}
+        onChange={(e) => setInputVal(e.target.value)}
+        style={{ padding: "10px", borderRadius: "5px", marginBottom: "10px" }}
+      />
 
-    },[useTimer,flag])
-    return(
-        <div>
-            <div>{count>0 && count}</div>
-            <input type="text" placeholder="Enter the countdown duration" value={count}
-            onChange={(e)=>setcount(e.target.value)} />
-            <div>
-                <button onClick={HandleClick}>SET</button>
-                <button onClick={PauseTimer}>Pause</button>
-            </div>
-        </div>
-    )
+      <div style={{ marginTop: "1rem" }}>
+        <button
+          onClick={handleStart}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#4caf50",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            marginRight: "10px",
+            cursor: "pointer",
+          }}
+        >
+          Start
+        </button>
+        <button
+          onClick={pause}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#f44336",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          Pause
+        </button>
+                <button
+          onClick={reset}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#f44336",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            marginLeft:'5px'
+          }}
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  );
 }

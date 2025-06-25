@@ -12,7 +12,7 @@ export default function StudentList(){
     }
 
     const students = useMemo(()=>{
-        return name
+        return name;
     },[name])
 
     return(
