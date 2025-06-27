@@ -161,7 +161,7 @@ button{
 
 .parent-button button{
   margin-top: 18px;
-  background-color: rgb(49, 137, 221);;
+  background-color: rgb(49, 137, 221);
   font-size: 20px;
   border-radius: 10px;
   border: none;
@@ -221,6 +221,7 @@ button{
 
 .sidebar-button{
   width: 50%;
+  
 }
 
 .hide-menu{

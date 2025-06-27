@@ -10,6 +10,7 @@ export default function Clock() {
       settime(new Date().toLocaleTimeString());
     }, 1000);
     return () => {
+      console.log("clear")
       clearInterval(id);
     };
   }, []);

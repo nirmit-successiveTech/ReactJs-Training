@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function Counter(){
 
-    const [cnt,setcnt]=useState(0);
+    const [cnt,setcnt]=useState(0);  //
 
 
     return(
