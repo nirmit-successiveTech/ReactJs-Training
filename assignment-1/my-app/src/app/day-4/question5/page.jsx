@@ -1,0 +1,27 @@
+"use client"
+import { useState } from "react"
+
+export default function Question5(){
+    const [choice,setchoice]=useState('');
+    const [display,setdisplay]=useState('')
+    const HandleClick = (e)=>{
+        e.preventDefault();
+        console.log('calling',choice)
+        setdisplay(choice);
+    }
+
+    return(
+        <div style={{paddingTop:'15%',margin:'auto',width:'30%',textAlign:'center'}}>
+            <div>Select one:</div>
+            <select name="Select Prefrences" id="" value={choice} onChange={(e)=>setchoice(e.target.value)}>
+                <option value="" >Choose</option>
+                <option value="Food" onClick={(e)=>setchoice(e.target.value)}>Food</option>
+                <option value="Gym" onClick={(e)=>setchoice(e.target.value)}>Gym</option>
+                <option value="MOvie" onChange={(e)=>setchoice(e.target.value)}>Movie</option>
+                <option value="Sleep" onChange={(e)=>setchoice(e.target.value)}>Sleep</option>
+            </select>
+            <button onClick={HandleClick}>Select</button>
+            <div>{display}</div>
+        </div>
+    )
+}

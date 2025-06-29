@@ -248,3 +248,12 @@ input{
   padding: 10px;
   border-radius: 10px;
 }
+
+button{
+  background-color:rgb(49, 137, 221);
+  color: white;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
