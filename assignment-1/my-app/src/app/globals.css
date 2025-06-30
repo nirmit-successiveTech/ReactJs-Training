@@ -41,6 +41,11 @@ a {
   }
 }
 
+.parent{
+  height: 100vh;
+  background-color: #ededed;
+}
+
 #parent{
   width: 50%;
   margin: auto;
@@ -106,8 +111,6 @@ button{
 }
 
 #list-element{
-  display: flex;
-  flex-direction: column;
   width: 200px;
   padding-top: 20px;
   margin: auto;
@@ -152,18 +155,18 @@ button{
 
 .parent-button{
   background-color: #E65182;
-  padding: 30px;
   color:white;
 }
 
 .layout-button{
    display: flex;
+   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .parent-button button{
   margin-top: 18px;
-  background-color: rgb(49, 137, 221);;
+  background-color: rgb(49, 137, 221);
   font-size: 20px;
   border-radius: 10px;
   border: none;
@@ -172,6 +175,7 @@ button{
 .heading-wrapper{
   display: flex;
   align-items: center;
+  padding: 30px;
   justify-content: space-between;
 }
 
@@ -191,4 +195,61 @@ button{
   font-size:20px;
   border: none;
   border-radius: 8px;
+}
+
+.form-wrapper form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width:50%;
+ margin: auto;
+}
+
+.form-wrapper input{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.sidebar-menu{
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: scroll;
+  position: absolute;
+  border: solid 5px #E65182;
+  background-color:  #E65182;
+  opacity: 0.6;
+}
+
+.sidebar-button{
+  width: 50%;
+  
+}
+
+.hide-menu{
+  display: none;
+}
+
+.parent-auth{
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+}
+.child-auth{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  gap: 10px;
+}
+
+input{
+  width: 500px;
+  padding: 10px;
+  border-radius: 10px;
 }
