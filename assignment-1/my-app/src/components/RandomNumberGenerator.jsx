@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 export default function RandomNumberGenerator(){
-    const [randomnumber,setrandomnumber]=useState(45);
+    const [randomnumber,setrandomnumber]=useState(parseInt(Math.random()*100));
 
 
     function Randomise(){

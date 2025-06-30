@@ -15,7 +15,7 @@ export default function ThemeProvider({children}){
 
     const style={
         light:{
-            backgroundColor: 'aqua',
+            backgroundColor: '#ededed',
         },
         dark:{
             backgroundColor:'black',
