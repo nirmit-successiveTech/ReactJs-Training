@@ -21,7 +21,7 @@ export default function Navbar() {
           fontSize: "20px",
         }}
       >
-        MySite
+        <Link href={'dashboard'}>Mysite</Link>
       </div>
 
       <div

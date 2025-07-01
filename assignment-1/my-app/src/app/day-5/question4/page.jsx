@@ -1,4 +1,7 @@
-import FetchComponent from "@/components/FetchComponent";
+// "use client"
+import FetchComponent from "@/components/FetchPagination"
+
+
 
 
 

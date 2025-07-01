@@ -1,39 +1,59 @@
-// app/fetch-component/page.jsx
+"use client"
 import axios from "axios";
-import { DataGrid } from "@mui/x-data-grid";
+import { useEffect, useState } from "react"
+import { DataGrid } from '@mui/x-data-grid';
+import Paper from '@mui/material/Paper';
 
-const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "name", headerName: "First name", width: 130 },
-  { field: "username", headerName: "Username", width: 130 },
-  { field: "email", headerName: "Email", width: 200 },
+export default function FetchPagination(){
+
+  const columns = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'name', headerName: ' name', width: 130 },
+  { field: 'username', headerName: 'USER name', width: 130 },
+  {
+    field: 'email',
+    headerName: 'email',
+    width: 90,
+  },
+
 ];
 
-export default async function FetchComponent() {
-  let rows = [];
-
-  try {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-
-    rows = response.data.map(({ id, name, username, email }) => ({
+ 
+  const [mydata,setmydata]=useState([]);
+  const fetchdata=async()=>{
+    try {
+          const fetchedvalue = await axios.get('https://jsonplaceholder.typicode.com/users');
+    const users = fetchedvalue.data.map(({id,name,username,email})=>({
       id,
       name,
       username,
-      email,
-    }));
-  } catch (error) {
-    console.error("Server fetch error:", error);
+      email
+    }))
+    setmydata(users);
+    } catch (error) {
+      console.log("some error")
+    }
+
+
+
   }
 
-  return (
-    <div style={{ height: 500, width: "100%" }}>
+  useEffect(()=>{
+    fetchdata()
+  },[])
+
+  const paginationModel = { page: 0, pageSize: 3 };
+
+  return(
+        <Paper sx={{ height: 400, width: '100%' }}>
       <DataGrid
-        rows={rows}
+        rows={mydata}
         columns={columns}
-        pageSizeOptions={[5, 10]}
+        // initialState={{ pagination: { paginationModel } }}
+        pageSizeOptions={[5, 5]}
         checkboxSelection
         sx={{ border: 0 }}
       />
-    </div>
-  );
+    </Paper>
+  )
 }

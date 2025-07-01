@@ -257,3 +257,28 @@ button{
   padding-right: 10px;
   border-radius: 10px;
 }
+
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.dashboard-sidebar {
+  width: 220px;
+  background-color: #1e293b; 
+  color: white;
+  padding: 1rem;
+}
+
+.dashboard-main {
+  flex: 1;
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+#productslink:hover{
+  color: cornflowerblue;
+}

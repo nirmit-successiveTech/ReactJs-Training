@@ -3,13 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 export default function FetchPost(){
-    const [data,setdata]=useState([]);
+    const [mydata,setmydata]=useState([]);
     const [error,seterror]=useState(null);
 
     const fetchdata=async()=>{
         try {
-            const fetchdata = await axios('https://jsonplaceholder.typicode.com/users')
-            setdata(fetchdata.data);
+            const fetchdata = await axios.get('https://jsonplaceholder.typicode.com/users')
+            setmydata(fetchdata.data);
             seterror(false);
         } catch (error) {
             console.log("erorrrr")
@@ -22,15 +22,19 @@ export default function FetchPost(){
     },[]);
 
     if(error){
+        return(
         <div>
             <button onClick={fetchdata}>Retry</button>
         </div>
+        )
+
     }
 
     return(
         <div>
-            {data.map((item,index)=>{
-                <div>{item.name}</div>
+            
+            {mydata.map((item,index)=>{
+                return <div>{item.name}</div>
             })}
         </div>
     )

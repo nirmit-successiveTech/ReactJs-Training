@@ -10,7 +10,9 @@ export default function PageProduct() {
                 {products.map((item, index) => (
                     <div key={index}>
                         <Link href={`products/${index + 1}`}>
+                            <div id="productslink" >
                             {products[index].name}
+                            </div>
                         </Link>
                     </div>
                 ))}

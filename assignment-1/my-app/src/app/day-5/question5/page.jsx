@@ -1,6 +1,8 @@
 "use client"
 
-import FetchComponent from "@/components/FetchPagination"
+import FetchComponent from "@/components/FetchComponent"
+
+
 
 export default function Question5(){
     return(
