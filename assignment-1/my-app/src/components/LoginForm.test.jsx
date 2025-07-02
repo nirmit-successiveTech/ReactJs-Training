@@ -8,9 +8,9 @@ describe("LoginForm", () => {
     const mockSubmit = jest.fn();
     render(<LoginForm onSubmit={mockSubmit} />);
 
-    const usernameInput = screen.getByPlaceholderText(/username/i);
-    const passwordInput = screen.getByPlaceholderText(/password/i);
-    const submitButton = screen.getByRole("button", { name: /login/i });
+    const usernameInput = screen.getByPlaceholderText(/username/i);       //accessing input username
+    const passwordInput = screen.getByPlaceholderText(/password/i);       //accessing input password
+    const submitButton = screen.getByRole("button", { name: /login/i });  //accessing input button
 
     await userEvent.type(usernameInput, "testuser");
     await userEvent.type(passwordInput, "testpass");
