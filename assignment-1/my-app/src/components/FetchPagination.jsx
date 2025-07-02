@@ -1,59 +1,54 @@
-"use client"
-import axios from "axios";
-import { useEffect, useState } from "react"
-import { DataGrid } from '@mui/x-data-grid';
-import Paper from '@mui/material/Paper';
+"use client";
 
-export default function FetchPagination(){
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import Paper from "@mui/material/Paper";
+
+export default function FetchPagination() {
+  const [mydata, setmydata] = useState([]);
+
+  const fetchdata = async () => {
+    try {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+      const users = response.data.map(({ id, name, username, email }) => ({
+        id,
+        name,
+        username,
+        email,
+      }));
+      setmydata(users);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
   const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'name', headerName: ' name', width: 130 },
-  { field: 'username', headerName: 'USER name', width: 130 },
-  {
-    field: 'email',
-    headerName: 'email',
-    width: 90,
-  },
+    { field: "id", headerName: "ID", width: 70 },
+    { field: "name", headerName: "Name", width: 150 },
+    { field: "username", headerName: "Username", width: 150 },
+    { field: "email", headerName: "Email", width: 200 },
+  ];
 
-];
-
- 
-  const [mydata,setmydata]=useState([]);
-  const fetchdata=async()=>{
-    try {
-          const fetchedvalue = await axios.get('https://jsonplaceholder.typicode.com/users');
-    const users = fetchedvalue.data.map(({id,name,username,email})=>({
-      id,
-      name,
-      username,
-      email
-    }))
-    setmydata(users);
-    } catch (error) {
-      console.log("some error")
-    }
-
-
-
-  }
-
-  useEffect(()=>{
-    fetchdata()
-  },[])
-
-  const paginationModel = { page: 0, pageSize: 3 };
-
-  return(
-        <Paper sx={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={mydata}
-        columns={columns}
-        // initialState={{ pagination: { paginationModel } }}
-        pageSizeOptions={[5, 5]}
-        checkboxSelection
-        sx={{ border: 0 }}
-      />
-    </Paper>
-  )
+  return (
+    <div style={{ padding: "2rem", backgroundColor: "#f9f9f9", minHeight: "100vh" }}>
+      <Paper>
+        <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>User Table</h3>
+        <DataGrid
+          rows={mydata}
+          columns={columns}
+          pageSizeOptions={[3]}
+          initialState={{
+            pagination: {
+              paginationModel: { pageSize: 3, page: 0 },
+            },
+          }}
+        />
+      </Paper>
+    </div>
+  );
 }

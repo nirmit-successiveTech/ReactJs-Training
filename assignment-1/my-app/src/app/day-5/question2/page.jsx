@@ -1,42 +1,17 @@
-"use client"
+import UsersList from "@/components/UserList";
 
-import axios from "axios";
-import { useEffect, useState } from "react"
 
-export default function Question2(){
 
-    const [datavalue,setdatavalue]=useState([]);
-    const [error,seterror]=useState(null);
+export default async function UsersPage() {
+  let users = null;
+  let error = false;
 
-    const fetchData=async()=>{
-        try {
-            const fetchvalue = await axios.get('https://jsonplaceholder.typicode.com/users')
-            setdatavalue(fetchvalue.data);
-            seterror(false);
-        } catch (error) {
-            seterror(true);
-            console.log("some error",error)
-        }
-    }
+  try {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    users = await res.json();
+  } catch (err) {
+    error = true;
+  }
 
-    useEffect(()=>{
-        fetchData();
-    },[])
-
-    if(error){
-        return(
-        <div>
-            <button onClick={fetchData}>Retry</button>
-        </div>
-        )
-
-    }
-
-    return(
-        <div>
-            {datavalue.map((item,index)=>(
-                <div key={index}>{item.name}</div>
-            ))}
-        </div>
-    )
+  return <UsersList initialUsers={users} hasError={error} />;
 }
