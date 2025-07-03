@@ -8,8 +8,7 @@ export default function Layout({children}){
         <>
         <ThemeProvider>
          <AuthProvider>
-        <Navbar />
-
+        <   Navbar />
             {children}
         </AuthProvider>
         </ThemeProvider>
