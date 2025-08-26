@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 export default function FetchPost(){
     const [mydata,setmydata]=useState([]);
     const [error,seterror]=useState(null);
+    const [loading,setloading]=useState('');
 
     const fetchdata=async()=>{
         try {

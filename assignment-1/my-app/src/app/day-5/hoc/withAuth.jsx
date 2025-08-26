@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 export default function withAuth(Component){
 
     return function Auth(props){
-            const [name,setname]=useState('');
+    const [name,setname]=useState('');
     const [email,setemail]=useState('');
     const router = useRouter();
 

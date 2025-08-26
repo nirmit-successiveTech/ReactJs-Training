@@ -10,7 +10,7 @@ export default function Question4() {
 
   const HandleClick = (e) => {
     console.log('calling')
-    e.preventDefault();  // prevent page reload on submit
+    e.preventDefault();  // prevent page reload on submit and refresh
     toast("form submitted");
   }
 

@@ -15,10 +15,10 @@ export default function Question5(){
             <div>Select one:</div>
             <select name="Select Prefrences" id="" value={choice} onChange={(e)=>setchoice(e.target.value)}>
                 <option value="" >Choose</option>
-                <option value="Food" onClick={(e)=>setchoice(e.target.value)}>Food</option>
-                <option value="Gym" onClick={(e)=>setchoice(e.target.value)}>Gym</option>
-                <option value="MOvie" onChange={(e)=>setchoice(e.target.value)}>Movie</option>
-                <option value="Sleep" onChange={(e)=>setchoice(e.target.value)}>Sleep</option>
+                <option value="Food">Food</option>
+                <option value="Gym">Gym</option>
+                <option value="MOvie">Movie</option>
+                <option value="Sleep">Sleep</option>
             </select>
             <button onClick={HandleClick}>Select</button>
             <div>{display}</div>

@@ -9,7 +9,7 @@ export default function PersonForm(){
         <div className="parent-form" style={{width:"50%",margin:"auto",paddingTop:'20px'}}>
         <div className="form-wrapper">
             <form action="">
-            <input type="text" placeholder="Enter Your Firstname" onChange={(e)=>setfirstname(e.target.value)}/>
+            <input type="text" placeholder="Enter Your Firstname" onChange={(e)=>setfirstname(e.target.value)} />
             <input type="text" placeholder="Enter Your LastName" onChange={(e)=>setlastname(e.target.value)}/>
             <input type="text" placeholder="Enter Your age" onChange={(e)=>setage(e.target.value)}/>
         </form>
