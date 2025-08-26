@@ -6,6 +6,7 @@ export default function CounterWithStep() {
   const [val, setval] = useState(0);
 
   function Increase() {
+    console.log('calling function');
     setcount(count + parseInt(val));
   }
 

@@ -81,7 +81,7 @@ export default function Layout2({ children }) {
             ))}
           </div>
         </div>
-        {children}
+        {children}  
         </Language>
       </CartProvider>
     </ThemeProvider>
